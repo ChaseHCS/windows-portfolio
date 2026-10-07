@@ -93,8 +93,19 @@ node scripts/scan-assets.mjs   # updates assets/manifest.json
 
 ## Deploying to GitHub Pages
 
-Settings → Pages → *Deploy from a branch* → select the branch and `/ (root)`.
-No build step is needed.
+Settings → Pages → *Build and deployment* → *Deploy from a branch* → pick the
+branch and `/ (root)`. No build step is needed. The site is served at
+`https://<user>.github.io/windows-portfolio/`. All paths are relative, so it
+works under that subpath or on a custom domain.
+
+- Keep the empty `.nojekyll` file in the repo root. Without it, GitHub Pages
+  runs Jekyll, whose default plugins turn `content/**/*.md` into HTML pages,
+  and the writeups would fail to load in Notepad.
+- GitHub Pages is case-sensitive: `assets/icons/My-Computer.png` is not
+  `my-computer.png`.
+- On a free GitHub plan, Pages requires the repository to be public. Private
+  repositories need GitHub Pro or a paid organization plan, and the published
+  site is public either way.
 
 ## Layout
 
