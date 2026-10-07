@@ -7,7 +7,7 @@
 
 import { createWindow, desktopRect } from '../wm.js';
 import { messageBox, aboutBox } from '../dialogs.js';
-import { h, storage, store, clamp, accel } from '../util.js';
+import { h, storage, store, clamp, accel, isTouch, isSmallScreen } from '../util.js';
 
 const LEVELS = {
   beginner: { w: 9, h: 9, mines: 10, label: 'Beginner' },
@@ -286,7 +286,11 @@ export function openMinesweeper() {
 class Minesweeper {
   constructor() {
     this.prefs = { ...DEFAULT_PREFS, ...storage(PREFS_KEY, {}) };
-    if (this.prefs.level !== 'custom' && !LEVELS[this.prefs.level]) this.prefs.level = 'beginner';
+    const p = this.prefs;
+    if (p.level !== 'custom' && !LEVELS[p.level]) p.level = 'beginner';
+    p.height = clamp(Math.round(+p.height) || 9, 9, 24);
+    p.width = clamp(Math.round(+p.width) || 9, 9, 30);
+    p.mines = clamp(Math.round(+p.mines) || 10, 10, (p.width - 1) * (p.height - 1));
 
     const win = createWindow({
       key: 'winmine',
@@ -383,7 +387,7 @@ class Minesweeper {
     this.mineDigits = [ledDigit(), ledDigit(), ledDigit()];
     this.timeDigits = [ledDigit(), ledDigit(), ledDigit()];
     this.faceEl = h('button', { class: 'ms-face', type: 'button', tabindex: '-1', 'aria-label': 'New game' });
-    this.boardEl = h('div', { class: 'ms-board', role: 'grid', 'aria-label': 'Minefield' });
+    this.boardEl = h('div', { class: 'ms-board', 'aria-label': 'Minefield' });
     this.game = h(
       'div',
       { class: 'ms-game' + (this.prefs.color ? '' : ' mono'), style: art },
@@ -436,12 +440,31 @@ class Minesweeper {
     this.setFace('smile');
     this.updateMineCounter();
     this.updateTime();
-    if (resized) this.keepOnScreen();
+    if (resized) this.fit();
+  }
+
+  /**
+   * Keep the window on the desktop. On small touch screens the game area is
+   * scaled up by a whole number (crisp pixels, tappable cells); it is only
+   * scaled down when the board cannot fit at all. Desktop browsers stay at 1x.
+   */
+  fit() {
+    const win = this.win, g = this.game;
+    if (win.closed || win.minimized) return;
+    g.style.zoom = '';
+    const desk = desktopRect();
+    const gw = g.offsetWidth, gh = g.offsetHeight;
+    const room = Math.min((desk.w - (win.el.offsetWidth - gw)) / gw, (desk.h - (win.el.offsetHeight - gh)) / gh);
+    let z = 1;
+    if (room < 1) z = Math.max(0.5, room);
+    else if (isTouch() && isSmallScreen()) z = Math.min(2, Math.floor(room));
+    if (z !== 1) g.style.zoom = String(z);
+    this.keepOnScreen();
   }
 
   keepOnScreen() {
     const win = this.win;
-    if (win.closed || win.maximized) return;
+    if (win.closed || win.maximized || win.minimized) return;
     const desk = desktopRect();
     const w = win.el.offsetWidth, ht = win.el.offsetHeight;
     let { x, y } = win;
@@ -691,6 +714,8 @@ class Minesweeper {
     });
 
     this.win.el.addEventListener('keydown', (e) => this.keyDown(e));
+    this.onResize = () => this.fit();
+    window.addEventListener('resize', this.onResize);
   }
 
   setFacePressed(on) {
@@ -1078,6 +1103,7 @@ class Minesweeper {
     if (this.touch?.timer) clearTimeout(this.touch.timer);
     document.removeEventListener('mousemove', this.onDocMove, true);
     document.removeEventListener('mouseup', this.onDocUp, true);
+    window.removeEventListener('resize', this.onResize);
     this.cheat.pixel?.remove();
   }
 }

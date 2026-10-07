@@ -14,7 +14,8 @@
 //   maximized,
 //   className, bodyClass,
 //   onClose,             // return false to cancel
-//   onHelp, onResize, onFocus,
+//   afterClose,          // called once the window has been removed
+//   onHelp, onResize, onFocus, onBlur,
 // }) -> Win
 
 import { h, clamp, drag, isSmallScreen, sleep } from './util.js';
@@ -141,6 +142,8 @@ class Win {
     // Size & position
     const desk = desktopRect();
     if (o.width) el.style.width = Math.min(o.width, desk.w) + 'px';
+    // Content-sized windows must not shrink when placed near the right edge.
+    else el.classList.add('fit-content');
     if (o.height) el.style.height = Math.min(o.height, desk.h) + 'px';
     getLayer().append(el);
 

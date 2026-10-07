@@ -225,6 +225,7 @@ hr.etched { border: none; height: 2px; margin: 6px 0; box-shadow: inset 0 1px va
   min-height: 40px;
   outline: none;
 }
+.window.fit-content { width: max-content; max-width: 100%; }
 .window.maximized { box-shadow: none; padding: 0; }
 .window.minimized { display: none; }
 
