@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Minesweeper (WINMINE.EXE, Windows 95)
+   Bevels are built from stacked 1px inset box-shadows, bottom/right ring first,
+   which reproduces the diagonal corner joins of the original DrawBorder().
+   Cell, flag, mine and number artwork arrives as --ms-* data-URI SVGs set by
+   js/apps/minesweeper.js on .ms-game.
+   ========================================================================== */
+
+.window.minesweeper { width: max-content; }
+
+.minesweeper .ms-game {
+  --ms-face: #c0c0c0;
+  --ms-light: #ffffff;
+  --ms-shadow: #808080;
+  flex: none;
+  position: relative;
+  padding: 9px;               /* 3px raised edge + 6px margin */
+  background: var(--ms-face);
+  box-shadow:
+    inset -1px -1px var(--ms-shadow), inset 1px 1px var(--ms-light),
+    inset -2px -2px var(--ms-shadow), inset 2px 2px var(--ms-light),
+    inset -3px -3px var(--ms-shadow), inset 3px 3px var(--ms-light);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  image-rendering: pixelated;
+}
+/* Color off: the black-and-white look of the original's monochrome bitmaps */
+.minesweeper .ms-game.mono .ms-board,
+.minesweeper .ms-game.mono .ms-face-img { filter: grayscale(1); }
+.minesweeper .ms-game.mono .ms-digit path { fill: #000; }
+.minesweeper .ms-game.mono .ms-digit path.on { fill: #fff; }
+.minesweeper .ms-game svg { display: block; flex: none; }
+
+/* ---- Top panel: mine counter, face, timer (2px sunken, 37px tall) ------- */
+
+.minesweeper .ms-panel {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 37px;
+  padding: 6px 7px 0;          /* 2px bevel + 4/5px inner margins */
+  box-shadow:
+    inset -1px -1px var(--ms-light), inset 1px 1px var(--ms-shadow),
+    inset -2px -2px var(--ms-light), inset 2px 2px var(--ms-shadow);
+}
+
+.minesweeper .ms-led {
+  display: flex;
+  padding: 1px;
+  background: #000;
+  box-shadow: inset -1px -1px var(--ms-light), inset 1px 1px var(--ms-shadow);
+}
+.minesweeper .ms-digit path { fill: #800000; }
+.minesweeper .ms-digit path.on { fill: #ff0000; }
+
+.minesweeper .ms-face {
+  position: relative;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--ms-face);
+  outline: none;
+  cursor: inherit;
+  /* 1px gray outline, then a 2px raised bevel */
+  box-shadow:
+    inset 0 0 0 1px var(--ms-shadow),
+    inset -2px -2px var(--ms-shadow), inset 2px 2px var(--ms-light),
+    inset -3px -3px var(--ms-shadow), inset 3px 3px var(--ms-light);
+  touch-action: none;
+}
+.minesweeper .ms-face.pressed {
+  box-shadow: inset 0 0 0 1px var(--ms-shadow), inset 2px 2px var(--ms-shadow);
+}
+.minesweeper .ms-face .ms-face-img { position: absolute; left: 4px; top: 4px; pointer-events: none; }
+.minesweeper .ms-face.pressed .ms-face-img { left: 5px; top: 5px; }
+
+/* ---- Minefield (3px sunken) --------------------------------------------- */
+
+.minesweeper .ms-field {
+  margin-top: 6px;
+  padding: 3px;
+  width: max-content;
+  box-shadow:
+    inset -1px -1px var(--ms-light), inset 1px 1px var(--ms-shadow),
+    inset -2px -2px var(--ms-light), inset 2px 2px var(--ms-shadow),
+    inset -3px -3px var(--ms-light), inset 3px 3px var(--ms-shadow);
+}
+
+.minesweeper .ms-board {
+  display: grid;
+  grid-auto-rows: 16px;
+  touch-action: none;
+  cursor: inherit;
+}
+.minesweeper .ms-board > div {
+  width: 16px;
+  height: 16px;
+  background: var(--ms-face) no-repeat 0 0 / 16px 16px;
+  /* Unrevealed: 2px raised */
+  box-shadow:
+    inset -1px -1px var(--ms-shadow), inset 1px 1px var(--ms-light),
+    inset -2px -2px var(--ms-shadow), inset 2px 2px var(--ms-light);
+}
+/* Revealed / depressed: flat with a 1px grid line on top and left */
+.minesweeper .ms-board > .o { box-shadow: inset 1px 1px var(--ms-shadow); }
+
+.minesweeper .ms-board > .f  { background-image: var(--ms-flag); }
+.minesweeper .ms-board > .q  { background-image: var(--ms-question); }
+.minesweeper .ms-board > .m  { background-image: var(--ms-mine); }
+.minesweeper .ms-board > .x  { background-color: #ff0000; }
+.minesweeper .ms-board > .w  { background-image: var(--ms-wrong); }
+.minesweeper .ms-board > .n1 { background-image: var(--ms-n1); }
+.minesweeper .ms-board > .n2 { background-image: var(--ms-n2); }
+.minesweeper .ms-board > .n3 { background-image: var(--ms-n3); }
+.minesweeper .ms-board > .n4 { background-image: var(--ms-n4); }
+.minesweeper .ms-board > .n5 { background-image: var(--ms-n5); }
+.minesweeper .ms-board > .n6 { background-image: var(--ms-n6); }
+.minesweeper .ms-board > .n7 { background-image: var(--ms-n7); }
+.minesweeper .ms-board > .n8 { background-image: var(--ms-n8); }
+
+/* xyzzy: the original lit the top-left pixel of the screen. */
+.ms-xyzzy {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  background: #fff;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+/* ---- Dialogs ------------------------------------------------------------- */
+
+.minesweeper.ms-dialog .window-body { padding: 12px 12px 10px; }
+.minesweeper.ms-dialog input::selection { background: #000080; color: #fff; }
+
+/* Custom Field */
+.minesweeper .ms-custom { display: flex; gap: 18px; align-items: stretch; }
+.minesweeper .ms-custom-fields {
+  display: grid;
+  grid-template-columns: auto 40px;
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 9px;
+  padding-top: 4px;
+}
+.minesweeper .ms-custom-fields input { width: 40px; }
+.minesweeper .ms-custom-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3px 0 1px;
+}
+
+/* Name entry: a captionless modal frame like the original */
+.minesweeper.ms-name-dlg .title-bar { display: none; }
+.minesweeper.ms-name-dlg .window-body { padding: 14px 16px 12px; }
+.minesweeper .ms-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 150px;
+}
+.minesweeper .ms-name-text { text-align: center; line-height: 13px; }
+.minesweeper .ms-name input { width: 120px; }
+
+/* Fastest Mine Sweepers */
+.minesweeper .ms-best { display: flex; flex-direction: column; gap: 18px; padding: 4px 6px 0; }
+.minesweeper .ms-best-grid {
+  display: grid;
+  grid-template-columns: auto auto minmax(80px, auto);
+  column-gap: 22px;
+  row-gap: 6px;
+}
+.minesweeper .ms-best-name { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.minesweeper .ms-best-buttons { display: flex; justify-content: center; gap: 24px; }
+.minesweeper .ms-best-buttons .btn { min-width: 88px; }

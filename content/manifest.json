@@ -1,0 +1,33 @@
+{
+  "owner": {
+    "name": "Your Name",
+    "handle": "yourhandle",
+    "organization": "",
+    "title": "Security Researcher"
+  },
+
+  "settings": {
+    "bootScreen": "once",
+    "showExtensions": false,
+    "sounds": true,
+    "welcomeScreen": true,
+    "driveLabel": ""
+  },
+
+  "documents": [
+    { "name": "About Me.txt", "src": "content/about.md", "date": "2026-10-01", "desktop": true },
+    { "name": "Resume.txt", "src": "content/resume.md", "date": "2026-10-01", "desktop": true },
+    { "name": "Contact.txt", "src": "content/contact.md", "date": "2026-10-01", "desktop": true }
+  ],
+
+  "writeups": [
+    { "name": "ExampleCTF - babyrop.txt", "src": "content/writeups/examplectf-babyrop.md", "date": "2026-09-14", "desktop": true },
+    { "name": "keygenme_01 crackme.txt", "src": "content/writeups/crackme-keygen.md", "date": "2026-08-30", "desktop": true },
+    { "name": "acme-notes SQLi to RCE.txt", "src": "content/writeups/lab-sqli-to-rce.md", "date": "2026-07-22", "desktop": true }
+  ],
+
+  "links": [
+    { "name": "GitHub", "url": "https://github.com/yourhandle", "desktop": true },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/yourhandle", "desktop": false }
+  ]
+}
