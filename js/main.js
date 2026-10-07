@@ -1,6 +1,7 @@
 // Entry point: load content, boot, then bring up the shell.
 
 import { loadConfig, config } from './config.js';
+import { loadAssetManifest } from './assets.js';
 import { buildFS, preloadContent } from './fs.js';
 import { loadIcons, iconURL } from './icons.js';
 import { registerApp } from './shell.js';
@@ -47,7 +48,7 @@ function shouldFullBoot() {
 }
 
 async function start() {
-  await loadConfig();
+  await Promise.all([loadConfig(), loadAssetManifest()]);
   const o = config.owner;
   document.title = `${o.name} - ${o.title || 'Portfolio'}`;
   setSoundEnabled(config.settings.sounds !== false);

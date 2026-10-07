@@ -1,35 +1,8 @@
 /* ==========================================================================
    Windows 95 chrome
-   Drop original fonts into assets/fonts/ (see assets/README.md); otherwise the
-   closest system fallback is used.
+   Original fonts/cursors in assets/ are registered from js/assets.js; until
+   then the closest system fallbacks are used.
    ========================================================================== */
-
-@font-face {
-  font-family: "W95 Sans";
-  src: url("../assets/fonts/ms-sans-serif.woff2") format("woff2"),
-       url("../assets/fonts/ms-sans-serif.ttf") format("truetype");
-  font-weight: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "W95 Sans";
-  src: url("../assets/fonts/ms-sans-serif-bold.woff2") format("woff2"),
-       url("../assets/fonts/ms-sans-serif-bold.ttf") format("truetype");
-  font-weight: bold;
-  font-display: swap;
-}
-@font-face {
-  font-family: "W95 Fixedsys";
-  src: url("../assets/fonts/fixedsys.woff2") format("woff2"),
-       url("../assets/fonts/fixedsys.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "W95 Terminal";
-  src: url("../assets/fonts/dos.woff2") format("woff2"),
-       url("../assets/fonts/dos.ttf") format("truetype");
-  font-display: swap;
-}
 
 :root {
   --face: #c0c0c0;
@@ -89,7 +62,7 @@ html, body {
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  cursor: url("../assets/cursors/arrow.cur"), default;
+  cursor: var(--cursor-arrow, default);
 }
 
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -581,4 +554,4 @@ hr.etched { border: none; height: 2px; margin: 6px 0; box-shadow: inset 0 1px va
 .sunken-panel { background: var(--window); box-shadow: var(--bevel-sunken); padding: 2px; }
 .selectable, .selectable * { user-select: text; -webkit-user-select: text; }
 .hidden { display: none !important; }
-body.busy, body.busy * { cursor: url("../assets/cursors/busy.cur"), progress !important; }
+body.busy, body.busy * { cursor: var(--cursor-busy, progress) !important; }

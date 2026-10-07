@@ -1,9 +1,16 @@
 # Original Windows 95 assets
 
 The site ships with built-in lookalike icons, a CSS boot splash and system-font
-fallbacks. Drop the original files into the folders below **using these exact
-names** and they are picked up automatically on the next page load. Nothing
-else needs to change. Any slot left empty keeps its lookalike.
+fallbacks. To use the originals:
+
+1. Drop the files into the folders below **using these exact names**.
+2. Run `node scripts/scan-assets.mjs`. It rewrites `assets/manifest.json` with
+   the files that are present.
+3. Commit both the files and `manifest.json`.
+
+Any slot without a file keeps its lookalike. The manifest exists so visitors'
+browsers never request files that aren't there (no 404s in the console). If
+you delete `manifest.json`, the site falls back to probing every slot.
 
 These are Microsoft's copyrighted or trademarked assets. You supply them and
 host them at your own discretion.

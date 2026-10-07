@@ -1,8 +1,9 @@
-// Icon registry. Each icon slot first looks for an original asset in
-// assets/icons/<name>.png (32x32) and assets/icons/<name>-16.png (16x16).
-// Anything missing falls back to the built-in lookalike in icon-fallbacks.js.
+// Icon registry. Each slot uses an original asset from assets/icons/<name>.png
+// (32x32) and <name>-16.png (16x16) when assets/manifest.json lists it, and the
+// built-in lookalike from icon-fallbacks.js otherwise.
 
 import { FALLBACK_ICONS } from './icon-fallbacks.js';
+import { listed } from './assets.js';
 
 const ICON_DIR = 'assets/icons/';
 const found = new Map(); // name -> { 32?: url, 16?: url }
@@ -21,11 +22,10 @@ function probe(url) {
 export async function loadIcons(names = Object.keys(FALLBACK_ICONS)) {
   await Promise.all(
     names.map(async (name) => {
-      const big = `${ICON_DIR}${name}.png`;
-      if (!(await probe(big))) return;
-      const entry = { 32: big };
-      const small = `${ICON_DIR}${name}-16.png`;
-      if (await probe(small)) entry[16] = small;
+      const has = async (file) => listed('icons', file) ?? (await probe(ICON_DIR + file));
+      if (!(await has(`${name}.png`))) return;
+      const entry = { 32: `${ICON_DIR}${name}.png` };
+      if (await has(`${name}-16.png`)) entry[16] = `${ICON_DIR}${name}-16.png`;
       found.set(name, entry);
     }),
   );

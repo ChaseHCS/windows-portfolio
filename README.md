@@ -85,8 +85,11 @@ Deep link straight to a document with `#open=Resume.txt`.
 
 Out of the box the site uses lookalike icons and fonts. To make it 1:1, drop
 the original icons, fonts, sounds, cursors and boot screens into `assets/`
-using the file names listed in [`assets/README.md`](assets/README.md). They're
-detected automatically.
+using the file names listed in [`assets/README.md`](assets/README.md), then run:
+
+```sh
+node scripts/scan-assets.mjs   # updates assets/manifest.json
+```
 
 ## Deploying to GitHub Pages
 
@@ -103,4 +106,5 @@ js/         main.js (entry), wm.js (windows), menu.js, desktop.js, taskbar.js,
 js/apps/    notepad, explorer, msdos, minesweeper, run, find, shutdown, welcome, applets
 content/    manifest.json, about/resume/contact, writeups/
 assets/     drop-in slots for original Win95 icons, fonts, sounds, cursors, boot screens
+scripts/    scan-assets.mjs (regenerates assets/manifest.json)
 ```

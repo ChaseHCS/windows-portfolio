@@ -2,6 +2,7 @@
 // Missing files are remembered and silently skipped.
 
 import { storage, store } from './util.js';
+import { listed } from './assets.js';
 
 const DIR = 'assets/sounds/';
 const missing = new Set();
@@ -34,7 +35,7 @@ export function setVolume(v) {
 
 /** names: startup, shutdown, ding, chord, chimes, tada, recycle, logoff */
 export function play(name) {
-  if (!enabled || muted || missing.has(name)) return Promise.resolve(false);
+  if (!enabled || muted || missing.has(name) || listed('sounds', `${name}.wav`) === false) return Promise.resolve(false);
   let audio = cache.get(name);
   if (!audio) {
     audio = new Audio(`${DIR}${name}.wav`);

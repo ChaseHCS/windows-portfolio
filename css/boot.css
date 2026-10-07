@@ -12,7 +12,7 @@
   cursor: none;
 }
 .boot[hidden] { display: none; }
-.boot.splash, .boot.shutting-down { cursor: url("../assets/cursors/busy.cur"), progress; }
+.boot.splash, .boot.shutting-down { cursor: var(--cursor-busy, progress); }
 .boot.safe-off, .boot.bsod { cursor: default; }
 
 .bios-text {

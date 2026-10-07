@@ -3,13 +3,14 @@
 
 import { h, sleep } from './util.js';
 import { config } from './config.js';
+import { listed } from './assets.js';
 
 const SPLASH = 'assets/boot/splash.png';
 const SHUTTING_DOWN = 'assets/boot/shutting-down.png';
 const SAFE_OFF = 'assets/boot/safe-to-turn-off.png';
 
 const exists = (url) =>
-  new Promise((r) => {
+  listed('boot', url.split('/').pop()) === false ? Promise.resolve(false) : new Promise((r) => {
     const img = new Image();
     img.onload = () => r(true);
     img.onerror = () => r(false);
