@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Boot, splash, shutdown and crash screens
+   ========================================================================== */
+
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 300000;
+  background: #000;
+  color: #c0c0c0;
+  overflow: hidden;
+  cursor: none;
+}
+.boot[hidden] { display: none; }
+.boot.splash, .boot.shutting-down { cursor: var(--cursor-busy, progress); }
+.boot.safe-off, .boot.bsod { cursor: default; }
+
+.bios-text {
+  margin: 0;
+  padding: 12px 14px;
+  font-family: var(--font-dos);
+  font-size: clamp(11px, 2.2vw, 18px);
+  line-height: 1.25;
+  white-space: pre-wrap;
+  color: #c0c0c0;
+}
+.energy-star {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 132px;
+  padding: 6px 8px;
+  border: 2px solid #00a8a8;
+  color: #00a8a8;
+  font: italic bold 26px/1 Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+.energy-star b { display: block; font: bold 8px/1.2 Arial, sans-serif; letter-spacing: 0.5px; margin-top: 4px; font-style: normal; }
+@media (max-width: 600px) { .energy-star { display: none; } }
+
+.boot-img { width: 100%; height: 100%; object-fit: fill; image-rendering: pixelated; display: block; }
+
+/* Fallback splash: a CSS take on the Win95 cloud screen. */
+.splash-art {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 18% 7% at 14% 18%, rgba(255,255,255,.95), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 14% 6% at 22% 21%, rgba(255,255,255,.9), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 22% 9% at 74% 14%, rgba(255,255,255,.95), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 16% 6% at 86% 19%, rgba(255,255,255,.85), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 26% 10% at 32% 78%, rgba(255,255,255,.95), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 18% 7% at 44% 82%, rgba(255,255,255,.9), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 22% 8% at 84% 72%, rgba(255,255,255,.9), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 12% 5% at 6% 62%, rgba(255,255,255,.85), rgba(255,255,255,0) 70%),
+    linear-gradient(#2f6fd8, #78a8ee 55%, #a8c8f4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.splash-logo { display: flex; align-items: center; gap: clamp(8px, 2vw, 20px); transform: translateY(-4%); }
+.splash-flag {
+  width: clamp(60px, 13vw, 130px);
+  aspect-ratio: 1.1;
+  background:
+    linear-gradient(#f2420c, #f2420c) 0 0 / 47% 47% no-repeat,
+    linear-gradient(#20a33a, #20a33a) 100% 0 / 47% 47% no-repeat,
+    linear-gradient(#1a5bd6, #1a5bd6) 0 100% / 47% 47% no-repeat,
+    linear-gradient(#f8c400, #f8c400) 100% 100% / 47% 47% no-repeat;
+  transform: perspective(300px) rotateY(-18deg) skewY(-6deg);
+  border-radius: 8% 14% 8% 14% / 18% 8% 18% 8%;
+  filter: drop-shadow(2px 3px 0 rgba(0,0,0,.35));
+}
+.splash-words { display: flex; flex-direction: column; color: #000; line-height: 1; }
+.splash-words small { font: bold clamp(12px, 2.4vw, 24px) Arial, sans-serif; margin-left: 4px; }
+.splash-words span { font: clamp(36px, 8vw, 84px) "Arial Black", Arial, sans-serif; letter-spacing: -2px; }
+.splash-words b { font-weight: 900; }
+.splash-words sup { font: bold clamp(18px, 4vw, 40px) Arial, sans-serif; vertical-align: super; margin-left: 4px; }
+.splash-bar {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2.2%;
+  min-height: 6px;
+  background: linear-gradient(90deg, #0000a8, #00a8ff, #ffffff, #00a8ff, #0000a8, #0000a8, #00a8ff, #ffffff, #00a8ff, #0000a8);
+  background-size: 50% 100%;
+  animation: splash-bar 1.4s linear infinite;
+}
+@keyframes splash-bar { to { background-position: 100% 0; } }
+@media (prefers-reduced-motion: reduce) { .splash-bar { animation: none; } }
+
+.shutdown-msg {
+  position: absolute;
+  top: 8%;
+  left: 0; right: 0;
+  text-align: center;
+  font: bold clamp(16px, 3.2vw, 30px) Arial, sans-serif;
+  color: #fff;
+  text-shadow: 2px 2px 0 #00006a;
+}
+
+.safe-msg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font: clamp(22px, 5.4vw, 52px)/1.35 Arial, sans-serif;
+  color: #ff8a00;
+  letter-spacing: 1px;
+}
+
+.bsod { background: #0000aa; color: #fff; display: flex; align-items: center; justify-content: center; }
+.bsod-box { max-width: 640px; padding: 20px; font: 16px/1.3 var(--font-dos); }
+.bsod-title { display: table; margin: 0 auto 16px; background: #aaaaaa; color: #0000aa; padding: 0 6px; }
