@@ -16,14 +16,14 @@
 
   "documents": [
     { "name": "About Me.txt", "src": "content/about.md", "date": "2026-10-01", "desktop": true },
-    { "name": "Resume.txt", "src": "content/resume.md", "date": "2026-08-03", "desktop": true },
+    { "name": "Resume.txt", "src": "content/resume.md", "date": "2026-08-02", "desktop": true },
     { "name": "Contact.txt", "src": "content/contact.md", "date": "2026-10-01", "desktop": true }
   ],
 
   "writeups": [
     { "name": "Breaking Through.txt", "src": "content/writeups/breaking-through.md", "date": "2026-07-29", "desktop": true },
-    { "name": "Windows Exploit Analysis.txt", "src": "content/writeups/windows-exploit-analysis.md", "date": "2026-09-12", "desktop": true },
-    { "name": "LLM Jailbreak Testing.txt", "src": "content/writeups/llm-jailbreak-testing.md", "date": "2026-09-20", "desktop": true },
+    { "name": "Windows Dynamic Analysis.txt", "src": "content/writeups/windows-dynamic-analysis.md", "date": "2026-09-12", "desktop": true },
+    { "name": "STIG Hardening Automation.txt", "src": "content/writeups/stig-hardening-automation.md", "date": "2026-09-20", "desktop": true },
     { "name": "Deep Learning Course Notes.txt", "src": "content/writeups/deeplearning-course-notes.md", "date": "2025-08-10", "desktop": true }
   ],
 
