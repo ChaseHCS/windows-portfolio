@@ -41,9 +41,9 @@ Jan 2024 - July 2024
 
 ## Projects
 
-- Performed static and binary analysis on Windows Executables to create novel exploitation scripts.
+- Performed dynamic analysis on Windows Executables to exploit logic flaws and create exploits.
 - Simulated a penetration test on an Active Directory environment where I achieved full compromise of the domain and documented all findings.
-- Conducted black-box jailbreak tests on foundation large language models.
+- Automated DISA STIG hardening for RHEL and Windows Server with Ansible, then scanned with OpenSCAP to review results.
 
 ## Skills
 

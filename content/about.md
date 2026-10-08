@@ -9,9 +9,9 @@ Hi, I'm Chase Hanson (ChaseHCS) - a cybersecurity researcher based in Plymouth, 
 
 ## Projects
 
-- Static and binary analysis of Windows executables to write novel exploitation scripts.
+- Dynamic analysis of Windows executables to exploit logic flaws and build working exploits.
 - A simulated penetration test of an Active Directory environment, taken to full domain compromise and documented end to end.
-- Black-box jailbreak testing of foundation large language models.
+- Automated DISA STIG hardening for RHEL and Windows Server with Ansible, verified with OpenSCAP.
 
 ## Education and certifications
 
