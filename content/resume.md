@@ -1,6 +1,7 @@
 # Chase Hanson - Resume
 
-Active Secret Clearance
+Active Secret Security Clearance
+Location: Plymouth, MA
 Email: mrchasehanson@gmail.com
 Phone: 774-454-5321
 GitHub: https://github.com/ChaseHCS
@@ -11,45 +12,59 @@ A PDF copy is on the desktop as "Resume (PDF)".
 
 ## Summary
 
-Cybersecurity researcher and OSCP-certified penetration tester holding an active Secret clearance, currently supporting classified Navy IT infrastructure as a senior field service technician. My focus is offensive security — Windows exploit development, Active Directory attacks, and AI/LLM security — grounded by hands-on defensive automation such as DISA STIG hardening. I pair deep systems fundamentals with a practical, build-it-and-break-it approach to every problem I take on.
+Cybersecurity researcher and OSCP-certified penetration tester with an active Secret clearance and nearly 3 years supporting classified Navy and Air Force IT environments as a DoD contractor. Focused on Windows exploit development, Active Directory attacks, and AI/LLM security, backed by hands-on DISA STIG compliance automation.
 
-## Education
+## Education & Certifications
 
-Bachelor's of Science in Cybersecurity and Information Assurance from WGU
-Sep 2021 - Apr 2025
+Western Governors University - Bachelor of Science, Cybersecurity and Information Assurance
+April 2025
 
-## Technical Certifications
-
-OSCP, CySa+, Pentest+, Sec +, Net +, A +, Cloud Essentials +, Project+, AZ-900 & AWS CP
-
-## Projects
-
-- Performed dynamic analysis on Windows Executables to exploit logic flaws and create exploits.
-- Simulated a penetration test on an Active Directory environment where I achieved full compromise of the domain and documented all findings.
-- Automated DISA STIG hardening for RHEL and Windows Server with Ansible, then scanned with OpenSCAP to review results.
+- OffSec: Offensive Security Certified Professional (OSCP)
+- CompTIA: CySA+, PenTest+, and Security+ (DoD 8140/8570 approved); Network+, A+, Cloud Essentials+, Project+
+- Cloud: Microsoft Azure Fundamentals (AZ-900); AWS Certified Cloud Practitioner
 
 ## Experience
 
 ### Classified Senior IT Field Service Technician
-Prime Technical Services @ Naval Station Newport (Contractor)
+Prime Technical Services - Contractor, Naval Station Newport (Newport, RI)
 July 2024 - Present
 
-- Assisted in WIN 11 upgrade for approximately 7000 devices across the enterprise.
-- Played a major role in onboarding approximately 3000 new devices into the enterprise.
-- Conducted routine maintenance and updates on classified systems.
-- Ensured compliance with classified information handling procedures and security policies.
-- Collaborated with other IT teams to integrate classified systems with the broader IT infrastructure and support interoperability.
-- Troubleshooted and supported network connectivity, including TCP/IP, DHCP, DNS, and VPN.
+- Upgraded endpoints as part of an enterprise-wide Windows 11 migration spanning approximately 7,000 devices.
+- Onboarded approximately 3,000 new devices into the enterprise as a key contributor to the deployment effort.
+- Maintained and updated classified systems in compliance with classified information handling and security policies.
+- Partnered with IT teams to integrate classified systems into the enterprise infrastructure and ensure interoperability.
+- Diagnosed and resolved network connectivity issues involving TCP/IP, DHCP, DNS, and VPN.
 
 ### Classified IT Field Service Technician & PKI Analyst
-Centuria @ Hanscom AFB (Contractor)
-Jan 2024 - July 2024
+Centuria - Contractor, Hanscom Air Force Base (Bedford, MA)
+January 2024 - July 2024
 
-- Managed the day-to-day operations of the PKI infrastructure, including certificate issuance, renewal, and revocation.
-- Managed cryptographic key lifecycle, including generation, distribution, and destruction, following best practices and security guidelines.
-- Resolved technical issues related to operating systems (Windows, macOS, Linux) and productivity software (Microsoft Office, 0365).
-- Wrote powerful powershell scripts to assist in troubleshooting
+- Administered daily Public Key Infrastructure (PKI) operations, including certificate issuance, renewal, and revocation.
+- Managed the cryptographic key lifecycle (generation, distribution, and destruction) in line with security guidelines.
+- Resolved operating system and software issues across Windows, macOS, Linux, and Microsoft 365.
+- Developed PowerShell scripts to automate routine troubleshooting tasks.
 
-## Skills
+## Projects
 
-AWS, Bloodhound, BurpSuite, MetaSploit, Python, AI Agents, Prompt Engineering, ASM, C, Nmap, Linux, Windows
+Full writeups are on the desktop.
+
+### Windows Dynamic Analysis & Exploit Development (Lab Project)
+
+- Analyzed Windows executables at runtime with x64dbg, WinDbg, and Sysinternals to identify logic flaws.
+- Built Python proof-of-concept exploits that reproduce each flaw reliably in an isolated lab.
+
+### Active Directory Penetration Test (Lab Project)
+
+- Achieved full domain compromise in a simulated Active Directory penetration test and documented all findings.
+
+### DISA STIG Compliance Automation (Lab Project)
+
+- Automated DISA STIG hardening for RHEL and Windows Server with idempotent Ansible playbooks.
+- Verified compliance with OpenSCAP scans, remediating failed rules and re-scanning to raise compliance scores.
+
+## Technical Skills
+
+- Offensive Security: Metasploit, BloodHound, Burp Suite, Nmap, x64dbg, WinDbg, Ghidra, IDA, Sysinternals
+- Defense & Compliance: DISA STIGs, OpenSCAP, Ansible, PKI and cryptographic key management
+- Languages: Python, PowerShell, C, Assembly
+- Platforms & AI: Windows, Windows Server, Active Directory, Linux (RHEL), AWS, AI agents, prompt engineering

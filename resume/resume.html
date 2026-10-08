@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Chase Hanson - Resume</title>
+<meta name="author" content="Chase Hanson">
+<style>
+  @page { size: Letter; margin: 0.65in 0.6in 0.5in; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    font-family: "Liberation Serif", "Times New Roman", Times, serif;
+    font-size: 10.5pt;
+    line-height: 1.25;
+    color: #000;
+    background: #fff;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  header { text-align: center; margin-bottom: 6pt; }
+  header h1 { font-size: 18pt; letter-spacing: 1.5pt; margin: 0 0 1pt; }
+  header .clearance { font-weight: bold; font-size: 11pt; margin-bottom: 1pt; }
+  header .contact { margin: 0; }
+  .sep { padding: 0 4pt; }
+
+  section { margin-top: 9pt; }
+  h2 {
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.8pt;
+    margin: 0 0 4pt;
+    padding-bottom: 1.5pt;
+    border-bottom: 0.75pt solid #000;
+  }
+  p { margin: 0; }
+
+  .entry { margin-bottom: 6pt; break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .row > span:last-child { white-space: nowrap; }
+  .org { font-weight: bold; }
+  .title { font-style: italic; }
+
+  ul { margin: 1.5pt 0 0; padding-left: 14pt; }
+  li { margin: 0 0 2pt; padding-left: 1pt; }
+  li:last-child { margin-bottom: 0; }
+
+  .label { font-weight: bold; }
+  .nowrap { white-space: nowrap; }
+  .certs p, .skills p { margin-bottom: 2pt; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CHASE HANSON</h1>
+  <div class="clearance">Active Secret Security Clearance</div>
+  <p class="contact">
+    Plymouth, MA<span class="sep">&bull;</span>774-454-5321<span class="sep">&bull;</span><a href="mailto:mrchasehanson@gmail.com">mrchasehanson@gmail.com</a>
+  </p>
+  <p class="contact">
+    <a href="https://www.linkedin.com/in/chase-hanson-b044411a7/">linkedin.com/in/chase-hanson-b044411a7</a><span class="sep">&bull;</span><a href="https://github.com/ChaseHCS">github.com/ChaseHCS</a><span class="sep">&bull;</span><a href="https://chasehcs.github.io/windows-portfolio/">chasehcs.github.io/windows-portfolio</a>
+  </p>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p>
+    Cybersecurity researcher and OSCP-certified penetration tester with an active Secret clearance and nearly 3 years
+    supporting classified Navy and Air Force IT environments as a DoD contractor. Focused on Windows exploit development,
+    Active Directory attacks, and AI/LLM security, backed by hands-on DISA STIG compliance automation.
+  </p>
+</section>
+
+<section>
+  <h2>Education &amp; Certifications</h2>
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">WESTERN GOVERNORS UNIVERSITY</span> &ndash; Bachelor of Science, Cybersecurity and Information Assurance</span>
+      <span>April 2025</span>
+    </div>
+  </div>
+  <div class="certs">
+    <p><span class="label">OffSec:</span> Offensive Security Certified Professional (OSCP)</p>
+    <p><span class="label">CompTIA:</span> CySA+, PenTest+, and Security+ (DoD 8140/8570 approved); Network+, A+, Cloud Essentials+, Project+</p>
+    <p><span class="label">Cloud:</span> Microsoft Azure Fundamentals (AZ-900); AWS Certified Cloud Practitioner</p>
+  </div>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">PRIME TECHNICAL SERVICES</span> &ndash; Contractor, Naval Station Newport</span>
+      <span>Newport, RI</span>
+    </div>
+    <div class="row">
+      <span class="title">Classified Senior IT Field Service Technician</span>
+      <span>July 2024 &ndash; Present</span>
+    </div>
+    <ul>
+      <li>Upgraded endpoints as part of an enterprise-wide Windows 11 migration spanning approximately 7,000 devices.</li>
+      <li>Onboarded approximately 3,000 new devices into the enterprise as a key contributor to the deployment effort.</li>
+      <li>Maintained and updated classified systems in compliance with classified information handling and security policies.</li>
+      <li>Partnered with IT teams to integrate classified systems into the enterprise infrastructure and ensure interoperability.</li>
+      <li>Diagnosed and resolved network connectivity issues involving TCP/IP, DHCP, DNS, and VPN.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <span><span class="org">CENTURIA</span> &ndash; Contractor, Hanscom Air Force Base</span>
+      <span>Bedford, MA</span>
+    </div>
+    <div class="row">
+      <span class="title">Classified IT Field Service Technician &amp; PKI Analyst</span>
+      <span>January 2024 &ndash; July 2024</span>
+    </div>
+    <ul>
+      <li>Administered daily Public Key Infrastructure (PKI) operations, including certificate issuance, renewal, and revocation.</li>
+      <li>Managed the cryptographic key lifecycle (generation, distribution, and destruction) in line with security guidelines.</li>
+      <li>Resolved operating system and software issues across Windows, macOS, Linux, and Microsoft 365.</li>
+      <li>Developed PowerShell scripts to automate routine troubleshooting tasks.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="entry">
+    <div class="row">
+      <span class="org">Windows Dynamic Analysis &amp; Exploit Development</span>
+      <span>Lab Project</span>
+    </div>
+    <ul>
+      <li>Analyzed Windows executables at runtime with x64dbg, WinDbg, and Sysinternals to identify logic flaws.</li>
+      <li>Built Python proof-of-concept exploits that reproduce each flaw reliably in an isolated lab.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <span class="org">Active Directory Penetration Test</span>
+      <span>Lab Project</span>
+    </div>
+    <ul>
+      <li>Achieved full domain compromise in a simulated Active Directory penetration test and documented all findings.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <span class="org">DISA STIG Compliance Automation</span>
+      <span>Lab Project</span>
+    </div>
+    <ul>
+      <li>Automated DISA STIG hardening for RHEL and Windows Server with idempotent Ansible playbooks.</li>
+      <li>Verified compliance with OpenSCAP scans, remediating failed rules and re-scanning to raise compliance scores.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Technical Skills</h2>
+  <p><span class="label">Offensive Security:</span> Metasploit, BloodHound, Burp Suite, Nmap, x64dbg, WinDbg, Ghidra, IDA, Sysinternals</p>
+  <p><span class="label">Defense &amp; Compliance:</span> DISA STIGs, OpenSCAP, Ansible, PKI and cryptographic key management</p>
+  <p><span class="label">Languages:</span> Python, PowerShell, C, Assembly</p>
+  <p><span class="label">Platforms &amp; AI:</span> Windows, Windows Server, Active Directory, Linux (RHEL), AWS, AI agents, prompt engineering</p>
+</section>
+
+</body>
+</html>
