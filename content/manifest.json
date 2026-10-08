@@ -16,17 +16,20 @@
 
   "documents": [
     { "name": "About Me.txt", "src": "content/about.md", "date": "2026-10-01", "desktop": true },
-    { "name": "Resume.txt", "src": "content/resume.md", "date": "2026-10-01", "desktop": true },
+    { "name": "Resume.txt", "src": "content/resume.md", "date": "2026-08-03", "desktop": true },
     { "name": "Contact.txt", "src": "content/contact.md", "date": "2026-10-01", "desktop": true }
   ],
 
   "writeups": [
+    { "name": "Breaking Through.txt", "src": "content/writeups/breaking-through.md", "date": "2026-07-29", "desktop": true },
+    { "name": "Deep Learning Course Notes.txt", "src": "content/writeups/deeplearning-course-notes.md", "date": "2025-08-10", "desktop": true },
     { "name": "ExampleCTF - babyrop.txt", "src": "content/writeups/examplectf-babyrop.md", "date": "2026-09-14", "desktop": true },
     { "name": "keygenme_01 crackme.txt", "src": "content/writeups/crackme-keygen.md", "date": "2026-08-30", "desktop": true },
     { "name": "acme-notes SQLi to RCE.txt", "src": "content/writeups/lab-sqli-to-rce.md", "date": "2026-07-22", "desktop": true }
   ],
 
   "links": [
+    { "name": "Resume (PDF)", "url": "content/resume.pdf", "desktop": true },
     { "name": "GitHub", "url": "https://github.com/yourhandle", "desktop": true },
     { "name": "LinkedIn", "url": "https://www.linkedin.com/in/yourhandle", "desktop": false }
   ]
