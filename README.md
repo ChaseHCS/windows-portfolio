@@ -67,6 +67,20 @@ boot sequence.
 The same goes for `documents` (About Me, Resume, Contact) and `links` (internet
 shortcuts on the desktop).
 
+## Updating the resume
+
+`content/resume.pdf` (the "Resume (PDF)" desktop shortcut) is generated from
+`resume/resume.html`. Edit the HTML, then print it to PDF with headless
+Chromium and check that it is still one page:
+
+```sh
+chromium --headless --no-pdf-header-footer \
+  --print-to-pdf=content/resume.pdf "file://$PWD/resume/resume.html"
+pdfinfo content/resume.pdf | grep Pages   # should be 1
+```
+
+Keep `content/resume.md` (the Notepad copy) in sync.
+
 ## Configuration (`content/manifest.json`)
 
 | Key | Meaning |
@@ -116,6 +130,7 @@ js/         main.js (entry), wm.js (windows), menu.js, desktop.js, taskbar.js,
             fs.js (virtual C:\ drive), shell.js (file associations), dialogs.js
 js/apps/    notepad, explorer, msdos, minesweeper, run, find, shutdown, welcome, applets
 content/    manifest.json, about/resume/contact, writeups/
+resume/     resume.html (source for content/resume.pdf)
 assets/     drop-in slots for original Win95 icons, fonts, sounds, cursors, boot screens
 scripts/    scan-assets.mjs (regenerates assets/manifest.json)
 ```

@@ -16,7 +16,7 @@
 
   "documents": [
     { "name": "About Me.txt", "src": "content/about.md", "date": "2026-10-01", "desktop": true },
-    { "name": "Resume.txt", "src": "content/resume.md", "date": "2026-08-02", "desktop": true },
+    { "name": "Resume.txt", "src": "content/resume.md", "date": "2026-10-08", "desktop": true },
     { "name": "Contact.txt", "src": "content/contact.md", "date": "2026-10-01", "desktop": true }
   ],
 
