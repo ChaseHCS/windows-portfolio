@@ -134,7 +134,7 @@ export function drag(e, { onStart, onMove, onEnd, threshold = 0 } = {}) {
   });
 }
 
-const URL_RE = /\b(https?:\/\/[^\s<>"'`]+[^\s<>"'`.,;:!?)\]}])|\b([\w.+-]+@[\w-]+(?:\.[\w-]+)+)\b/g;
+const URL_RE = /\b(https?:\/\/[^\s<>"'`]+[^\s<>"'`.,;:!?)\]}*])|\b([\w.+-]+@[\w-]+(?:\.[\w-]+)+)\b/g;
 
 /** Append text to el, turning URLs and e-mail addresses into links. */
 export function linkify(el, text) {

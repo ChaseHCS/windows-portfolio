@@ -1,80 +1,50 @@
-[PLACEHOLDER - replace this file: content/resume.md]
+# Chase Hanson - Resume
 
-# Your Name - Resume
+Active Secret Clearance
+Email: mrchasehanson@gmail.com
+Phone: 774-454-5321
+GitHub: https://github.com/ChaseHCS
+LinkedIn: https://www.linkedin.com/in/chase-hanson-b044411a7/
 
-Security Researcher / Offensive Security
-Email: you@example.com
-GitHub: https://github.com/yourhandle
-LinkedIn: https://www.linkedin.com/in/yourhandle
-
-Note: This is placeholder content. Replace every section below with your own details before publishing.
-
-## Summary
-
-Security researcher with a background in offensive security, vulnerability research, and exploit development. Comfortable across the stack: binary exploitation, web application security, and reverse engineering. I find bugs, prove impact with reliable proof-of-concept exploits, and write clear reports that developers can act on. Active CTF player and writeup author.
-
-## Experience
-
-### Security Engineer, Example Corp
-2024 - Present
-
-- Perform offensive security assessments against internal and customer-facing applications, APIs, and services.
-- Develop proof-of-concept exploits to demonstrate real-world impact of discovered vulnerabilities.
-- Partner with engineering teams on remediation guidance and secure-by-default patterns.
-- Build internal tooling to automate recon, triage, and regression testing of past findings.
-
-### Penetration Tester, Example Security Labs
-2022 - 2024
-
-- Conducted network, web, and mobile penetration tests for clients across multiple industries.
-- Led reverse-engineering efforts on thick clients and embedded firmware images.
-- Authored detailed, reproducible reports with severity ratings and clear remediation steps.
-- Mentored junior testers on exploit development and methodology.
-
-### Junior Security Analyst, Example Industries
-2021 - 2022
-
-- Triaged vulnerability scan output and separated real issues from noise.
-- Assisted senior testers during engagements and handled evidence collection.
-- Wrote internal documentation and lab exercises used for team onboarding.
+A PDF copy is on the desktop as "Resume (PDF)".
 
 ## Education
 
-- B.S. in Computer Science, Example University, 2021
-- Relevant coursework: operating systems, computer architecture, networks, cryptography.
+Bachelor's of Science in Cybersecurity and Information Assurance from WGU
+Sep 2021 - Apr 2025
 
-## Certifications
+## Technical Certifications
 
-- [Certification] - offensive security / hands-on exploitation (e.g. an OSCP-style cert)
-- [Certification] - web application security
-- [Certification] - reverse engineering or exploit development
-- Replace these with the real certifications you hold.
+OSCP, CySa+, Pentest+, Sec +, Net +, A +, Cloud Essentials +, Project+, AZ-900 & AWS CP
+
+## Experience
+
+### Classified Senior IT Field Service Technician
+Prime Technical Services @ Naval Station Newport (Contractor)
+July 2024 - Present
+
+- Assisted in WIN 11 upgrade for approximately 7000 devices across the enterprise.
+- Played a major role in onboarding approximately 3000 new devices into the enterprise.
+- Conducted routine maintenance and updates on classified systems.
+- Ensured compliance with classified information handling procedures and security policies.
+- Collaborated with other IT teams to integrate classified systems with the broader IT infrastructure and support interoperability.
+- Troubleshooted and supported network connectivity, including TCP/IP, DHCP, DNS, and VPN.
+
+### Classified IT Field Service Technician & PKI Analyst
+Centuria @ Hanscom AFB (Contractor)
+Jan 2024 - July 2024
+
+- Managed the day-to-day operations of the PKI infrastructure, including certificate issuance, renewal, and revocation.
+- Managed cryptographic key lifecycle, including generation, distribution, and destruction, following best practices and security guidelines.
+- Resolved technical issues related to operating systems (Windows, macOS, Linux) and productivity software (Microsoft Office, 0365).
+- Wrote powerful powershell scripts to assist in troubleshooting
+
+## Projects
+
+- Performed static and binary analysis on Windows Executables to create novel exploitation scripts.
+- Simulated a penetration test on an Active Directory environment where I achieved full compromise of the domain and documented all findings.
+- Conducted black-box jailbreak tests on foundation large language models.
 
 ## Skills
 
-### Exploitation
-- Linux binary exploitation (x86-64): stack overflows, ret2libc, ROP, format strings.
-- Heap exploitation on modern glibc (tcache, use-after-free, overlapping chunks).
-- Tooling: pwntools, GDB + pwndbg, ROPgadget, one_gadget.
-
-### Web and application security
-- Injection (SQLi, command injection, SSTI), auth bypass, SSRF, insecure file upload.
-- Burp Suite, ffuf, custom fuzzing and tooling.
-
-### Reverse engineering
-- Static analysis with Ghidra and radare2/rizin.
-- Dynamic analysis with GDB, strace, ltrace.
-- Algorithm recovery and keygen development.
-
-### Languages and platforms
-- Python (primary), C, some Go and assembly (x86-64).
-- Linux (daily driver), bash, git.
-
-## Selected work
-
-- CTF writeups and research notes: see the Writeups section of this site.
-- Public tooling and scripts: https://github.com/yourhandle
-
-## References
-
-Available on request.
+AWS, Bloodhound, BurpSuite, MetaSploit, Python, AI Agents, Prompt Engineering, ASM, C, Nmap, Linux, Windows
