@@ -2,10 +2,10 @@
 
 export const config = {
   owner: {
-    name: 'Your Name',
-    handle: 'yourhandle',
+    name: 'Chase Hanson',
+    handle: 'ChaseHCS',
     organization: '',
-    title: 'Security Researcher',
+    title: 'Cybersecurity Researcher',
   },
   settings: {
     // "once" = full boot sequence on the first visit of a browser session,
